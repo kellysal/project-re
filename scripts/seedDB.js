@@ -1,30 +1,36 @@
 const mongoose = require("mongoose");
 const db = require("../models");
 
-// This file empties the Books collection and inserts the books below
+// This file empties the Listings collection and inserts the listings below
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/relistings", { useNewUrlParser: true });
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/relisting", { useNewUrlParser: true });
 
 const listingSeed = [
   {
-    address: "Congress Street",
+    address: "250 Northern Ave",
     county: "Boston",
+    sqft: 724,
+    price: 3361,
     description:
-      "A number-one national best seller about a man who wakes up from a five-year coma able to see people's futures and the terrible fate awaiting mankind in The Dead Zone - a \"compulsive page-turner\" (The Atlanta Journal-Constitution). Johnny Smith awakens from a five-year coma after his car accident and discovers that he can see people's futures and pasts when he touches them. Many consider his talent a gift; Johnny feels cursed. His fiancée married another man during his coma, and people clamor for him to solve their problems. When Johnny has a disturbing vision after he shakes the hand of an ambitious and amoral politician, he must decide if he should take drastic action to change the future. The Dead Zone is a \"faultlessly paced...continuously engrossing\" (Los Angeles Times) novel of second sight.",
+      "Welcome to the trendy sought after Seaport neighborhood of Boston! Enjoy concierge services, garage parking, classy lounges for entertaining, quiet business spaces, fitness center, and a rooftop lounge with stunning views!",
     date: new Date(Date.now())
   },
   {
-    address: "Kingston Street",
+    address: "41 Fan Pier Blvd",
     county: "Boston",
+    sqft: 750,
+    price: 3821,
     description:
-      "The tale of a party of shipwrecked schoolboys, marooned on a coral island, who at first enjoy the freedom of the situation but soon divide into fearsome gangs which turn the paradise island into a nightmare of panic and death.",
+      "This is a non broker fee listing! Luxury apartment in Boston's up and coming Seaport district Commuting needs - proximity to Bostons South Station, I90 + I93. As well as the silver line. Ask about other available floor plans. Pricing and availability are subject to change. Pet friendly. Some breed restrictions may apply.",
     date: new Date(Date.now())
   },
   {
-    address: "Cambridge Street",
+    address: "46 Commonwealth Ave",
     county: "Boston",
+    sqft: 800,
+    price: 3500,
     description:
-      "The Catcher in the Rye is a 1951 novel by J. D. Salinger. A controversial novel originally published for adults, it has since become popular with adolescent readers for its themes of teenage angst and alienation. It has been translated into almost all of the world's major languages. Around 1 million copies are sold each year with total sales of more than 65 million books. The novel's protagonist Holden Caulfield has become an icon for teenage rebellion. The novel also deals with complex issues of innocence, identity, belonging, loss, and connection.",
+      "Located on the 1st block of Commonwealth Ave in a magnificent converted mansion with detailed common areas. Welcoming foyer leads to charming living room with open floor plan. Very sunny unit with amazing city views, gleaming walnut stained hard wood floors, high ceilings with elegant moldings, as well as a fire place. Top of the line appliances in the kitchen and professionally designed closets and bathrooms.",
     date: new Date(Date.now())
   }
 ];

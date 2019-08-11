@@ -10,6 +10,12 @@ const ListingSchema = new Schema({
     type: String,
     required: true
   },
+  sqft: {
+    type: Number,
+  },
+  price: {
+    type: Number,
+  },
   description: {
     type: String
   },

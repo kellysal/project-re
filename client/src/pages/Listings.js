@@ -12,6 +12,8 @@ class Listings extends Component {
     listings: [],
     address: "",
     county: "",
+    sqft: 0,
+    price: 0,
     description: ""
   };
 
@@ -22,7 +24,7 @@ class Listings extends Component {
   loadListings = () => {
     API.getListings()
       .then(res =>
-        this.setState({ listings: res.data, address: "", county: "", description: "" })
+        this.setState({ listings: res.data, address: "", county: "", sqft: "", price: "", description: "" })
       )
       .catch(err => console.log(err));
   };
@@ -46,6 +48,8 @@ class Listings extends Component {
       API.saveListing({
         address: this.state.address,
         county: this.state.county,
+        sqft: this.state.sqft,
+        price: this.state.price,
         description: this.state.description
       })
         .then(res => this.loadListings())
@@ -59,7 +63,7 @@ class Listings extends Component {
         <Row>
           <Col size="md-6">
             <Jumbotron>
-              <h1>What Listings Should I Tour?</h1>
+              <h1>Add New Listing</h1>
             </Jumbotron>
             <form>
               <Input
@@ -74,11 +78,24 @@ class Listings extends Component {
                 name="county"
                 placeholder="County (required)"
               />
+              <Input
+                value={this.state.sqft}
+                onChange={this.handleInputChange}
+                name="sqft"
+                placeholder="sqft"
+              />
+              <Input
+                value={this.state.price}
+                onChange={this.handleInputChange}
+                name="price"
+                placeholder="price"
+              />
               <TextArea
                 value={this.state.description}
                 onChange={this.handleInputChange}
                 name="description"
                 placeholder="Description (Optional)"
+                rows="3"
               />
               <FormBtn
                 disabled={!(this.state.county && this.state.address)}
@@ -98,7 +115,7 @@ class Listings extends Component {
                   <ListItem key={listing._id}>
                     <Link to={"/listings/" + listing._id}>
                       <strong>
-                        {listing.address} by {listing.county}
+                        {listing.address} in {listing.county}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteListing(listing._id)} />
