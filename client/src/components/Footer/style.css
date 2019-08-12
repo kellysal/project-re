@@ -1,0 +1,11 @@
+.footer {
+    text-align: center;
+    background-color: black;
+    color: white;
+    font-family: "Helvetica", sans-serif;
+}
+
+#logo{
+    height: 40px;
+    margin: 10px;
+}

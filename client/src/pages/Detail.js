@@ -23,20 +23,17 @@ class Detail extends Component {
           <Col size="md-12">
             <Jumbotron>
               <h1>
-                {this.state.listing.address} in {this.state.listing.county}
+                {this.state.listing.address} • {this.state.listing.county}
               </h1>
             </Jumbotron>
           </Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
-            <article>
+          <Col size="md-12">
+            <article style={{ padding: 20 }}>
               <h1>Property Details</h1>
               <p>
-                {this.state.listing.sqft} SQFT
-              </p>
-              <p>
-                $ {this.state.listing.price}
+                {this.state.listing.sqft} SQFT • $ {this.state.listing.price}
               </p>
               <p>
                 {this.state.listing.description}
@@ -45,8 +42,8 @@ class Detail extends Component {
           </Col>
         </Row>
         <Row>
-          <Col size="md-2">
-            <Link to="/">← Back</Link>
+          <Col size="md-12">
+            <Link to="/" style={{ padding: 20 }}>← Back</Link>
           </Col>
         </Row>
       </Container>

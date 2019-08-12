@@ -1,4 +1,5 @@
 import React from "react";
+import "./style.css";
 
 // Exporting the Container, Row, and Col components from this file
 
@@ -17,6 +18,7 @@ export function Row({ fluid, children }) {
 export function Col({ size, children }) {
   return (
     <div
+      style={{ padding: 0 }}
       className={size
         .split(" ")
         .map(size => "col-" + size)

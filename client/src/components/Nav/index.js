@@ -5,7 +5,7 @@ function Nav() {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <a className="navbar-brand" href="/">
-        React Property List
+        Property Listing Project
       </a>
     </nav>
   );

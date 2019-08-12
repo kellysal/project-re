@@ -61,53 +61,9 @@ class Listings extends Component {
     return (
       <Container fluid>
         <Row>
-          <Col size="md-6">
+          <Col size="lg-12">
             <Jumbotron>
-              <h1>Add New Listing</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                value={this.state.address}
-                onChange={this.handleInputChange}
-                name="address"
-                placeholder="Address (required)"
-              />
-              <Input
-                value={this.state.county}
-                onChange={this.handleInputChange}
-                name="county"
-                placeholder="County (required)"
-              />
-              <Input
-                value={this.state.sqft}
-                onChange={this.handleInputChange}
-                name="sqft"
-                placeholder="sqft"
-              />
-              <Input
-                value={this.state.price}
-                onChange={this.handleInputChange}
-                name="price"
-                placeholder="price"
-              />
-              <TextArea
-                value={this.state.description}
-                onChange={this.handleInputChange}
-                name="description"
-                placeholder="Description (Optional)"
-                rows="3"
-              />
-              <FormBtn
-                disabled={!(this.state.county && this.state.address)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Listing
-              </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Properties On My List</h1>
+              <h1>MY PROPERTY LIST</h1>
             </Jumbotron>
             {this.state.listings.length ? (
               <List>
@@ -115,7 +71,7 @@ class Listings extends Component {
                   <ListItem key={listing._id}>
                     <Link to={"/listings/" + listing._id}>
                       <strong>
-                        {listing.address} in {listing.county}
+                        {listing.address} • {listing.county}
                       </strong>
                     </Link>
                     <DeleteBtn onClick={() => this.deleteListing(listing._id)} />
@@ -125,6 +81,52 @@ class Listings extends Component {
             ) : (
                 <h3>No Results to Display</h3>
               )}
+          </Col>
+        </Row>
+        <Row>
+          <Col size="lg-12">
+            <Jumbotron>
+              <h1>ADD NEW LISTING</h1>
+            </Jumbotron>
+            <form>
+              <Input
+                value={this.state.address}
+                onChange={this.handleInputChange}
+                name="address"
+                placeholder="Enter Address"
+              />
+              <Input
+                value={this.state.county}
+                onChange={this.handleInputChange}
+                name="county"
+                placeholder="Enter County"
+              />
+              <Input
+                value={this.state.sqft}
+                onChange={this.handleInputChange}
+                name="sqft"
+                placeholder="Enter SQFT"
+              />
+              <Input
+                value={this.state.price}
+                onChange={this.handleInputChange}
+                name="price"
+                placeholder="Enter Price"
+              />
+              <TextArea
+                value={this.state.description}
+                onChange={this.handleInputChange}
+                name="description"
+                placeholder="Enter Description"
+                rows="3"
+              />
+              <FormBtn
+                disabled={!(this.state.county && this.state.address)}
+                onClick={this.handleFormSubmit}
+              >
+                ADD LISTING
+              </FormBtn>
+            </form>
           </Col>
         </Row>
       </Container>
