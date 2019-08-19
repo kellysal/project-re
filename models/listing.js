@@ -22,7 +22,8 @@ const ListingSchema = new Schema({
   date: {
     type: Date,
     default: Date.now
-  }
+  },
+  surveys: { type: Schema.Types.ObjectId, ref: "Survey" }
 });
 
 const Listing = mongoose.model("Listing", ListingSchema);
