@@ -14,10 +14,7 @@ class Detail extends Component {
       answer1: "",
       answer2: "",
       answer3: "",
-      answer4: "",
-      answer5: "",
-      answer6: "",
-      answer7: ""
+      answer4: ""
     }
   };
   // When this component mounts, grab the listing with the _id of this.props.match.params.id
@@ -36,24 +33,30 @@ class Detail extends Component {
     this.setState({
       newSubmit
     });
-    // console.log(this.state.answers);
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
+    if (this.state.newSubmit && this.state.newSubmit) {
+      console.log(this.state.newSubmit);
+      var answerArr = Object.keys(this.state.newSubmit).map(key => this.state.newSubmit[key]);
 
-    // const answers = [
-    //   document.getElementById("a1").value,
-    //   document.getElementById("a2").value,
-    //   document.getElementById("a3").value,
-    //   document.getElementById("a4").value
-    // ];
-    // console.log(answers);
-    // surveyAPI.saveSurvey({
-    //   answers: answers,
-    // })
-    //   .then(res => this.loadSurveys())
-    //   .catch(err => console.log(err));
+      surveyAPI.saveSurvey({
+        "user": 1,
+        "property": "testprop",
+        "answers": answerArr
+      })
+        .then(() => this.setState({
+          newSubmit: {
+            answer1: "",
+            answer2: "",
+            answer3: "",
+            answer4: ""
+          }
+        }))
+        // .then(res => this.loadSurveys())
+        .catch(err => console.log(err));
+    }
   };
 
   render() {
@@ -102,7 +105,7 @@ class Detail extends Component {
                 return (
                   <div>
                     <h5 style={{ margin: 25 }}>{`${idx + 1} Checklist Item`} </h5>
-                    <input
+                    <Input
                       id={`a${idx}`}
                       value={this.state.newSubmit[key]}
                       name={`q${idx}`}
@@ -114,7 +117,7 @@ class Detail extends Component {
               })}
 
               <FormBtn
-                disabled={!(this.state.answers && this.state.answers)}
+                disabled={!(this.state.newSubmit && this.state.newSubmit)}
                 onClick={this.handleFormSubmit}
               >
                 ADD SURVEY
