@@ -5,7 +5,7 @@ import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
 import surveyAPI from "../utils/surveyAPI";
 import { Input, FormBtn } from "../components/Form";
-// import { List, ListItem } from "../components/List";
+import { List, ListItem } from "../components/List";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -39,12 +39,14 @@ class Detail extends Component {
       .catch(err => console.log(err));
   }
 
-  loadSurvey = id => {
-    // console.log(this.props.match.params.id); //console log property id
-    console.log("from loadSurvey");
-    console.log(id);
+  loadSurvey = () => {
+    console.log(this.props.match.params.id); //console log property id
     surveyAPI.getSurvey(this.props.match.params.id)
-      .then(res => this.setState({ survey: res.data, property: "", answers: [""] }))
+      .then(res => {
+        console.log(res.data);
+        this.setState({ survey: res.data, property: "", answers: [""] })
+        console.log(this.state.survey);
+      })
       .catch(err => console.log(err));
   };
 
@@ -117,7 +119,6 @@ class Detail extends Component {
         <Row>
           <Col size="md-12">
             <Jumbotron>
-
               <h1>
                 Tour Checklist
               </h1>
@@ -130,9 +131,9 @@ class Detail extends Component {
               {Object.keys(this.state.newSubmit).map((key, idx) => {
                 return (
                   <div>
-
-                    <h5 style={{ margin: 25, fontFamily: "Helvetica" }}><FontAwesomeIcon icon="check" color={"green"} />{`${idx + 1} Checklist Item`} </h5>
+                    <h5 style={{ margin: 25, fontFamily: "Helvetica" }}><FontAwesomeIcon key={idx} icon="check" color={"green"} />{`${idx + 1} Checklist Item`} </h5>
                     <Input
+                      key={idx}
                       id={`a${idx}`}
                       value={this.state.newSubmit[key]}
                       name={`q${idx}`}
@@ -153,15 +154,21 @@ class Detail extends Component {
           </Col>
 
         </Row>
-        {/* <Row>
+        <Row>
           <Col size="lg-12">
             {this.state.survey.length ? (
               <List>
-                {this.state.surveys.map(survey => (
+                {this.state.survey.map(survey => (
                   <ListItem key={survey._id}>
                     <h1>
                       {survey.property}
+
                     </h1>
+                    <h1>
+                      {survey.answers[0]}
+
+                    </h1>
+
                   </ListItem>
                 ))}
               </List>
@@ -170,7 +177,7 @@ class Detail extends Component {
               )}
           </Col>
 
-        </Row> */}
+        </Row>
       </Container>
     );
   }

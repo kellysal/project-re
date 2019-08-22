@@ -23,7 +23,8 @@ const ListingSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  surveys: { type: Schema.Types.ObjectId, ref: "Survey" }
+  user: { type: Schema.Types.ObjectId, ref: "User" }
+  // surveys: { type: Schema.Types.ObjectId, ref: "Survey" }
 });
 
 const Listing = mongoose.model("Listing", ListingSchema);

@@ -13,8 +13,7 @@ const UserSchema = new Schema({
     password: {
         type: String,
         required: true
-    },
-    listings: [{ type: Schema.Types.ObjectId, ref: "Listing" }]
+    }
 });
 
 const User = mongoose.model("User", UserSchema);
