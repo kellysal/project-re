@@ -1,5 +1,6 @@
 import React from "react";
 import "./style.css";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 // This file exports the Input, TextArea, and FormBtn components
 

@@ -5,7 +5,7 @@ export default {
     getSurveys: function () {
         return axios.get("/api/surveys");
     },
-    // Gets the survey with the given id
+    // Gets the survey with the given id / property id
     getSurvey: function (id) {
         return axios.get("/api/surveys/" + id);
     },

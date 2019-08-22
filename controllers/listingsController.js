@@ -5,6 +5,7 @@ module.exports = {
   findAll: function (req, res) {
     db.Listing
       .find(req.query)
+      .populate("survey")
       .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
@@ -12,6 +13,7 @@ module.exports = {
   findById: function (req, res) {
     db.Listing
       .findById(req.params.id)
+      .populate("survey")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

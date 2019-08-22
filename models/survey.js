@@ -2,21 +2,11 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const SurveySchema = new Schema({
-    user: {
-        type: Number,
-        required: true
-    },
-    property: {
-        type: String,
-        required: true
-    },
+    // user: [{ type: Schema.Types.ObjectId, ref: "User" }],
+    // property: [{ type: Schema.Types.ObjectId, ref: "Listing" }],
     answers: [{
         type: String
-    }],
-    date: {
-        type: Date,
-        default: Date.now
-    }
+    }]
 });
 
 const Survey = mongoose.model("Survey", SurveySchema);

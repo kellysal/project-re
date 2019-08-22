@@ -5,6 +5,10 @@ import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faCheck, faCoffee } from '@fortawesome/free-solid-svg-icons'
+
+library.add(faCheck, faCoffee)
 
 function App() {
   return (
