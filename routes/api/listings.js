@@ -12,4 +12,8 @@ router.route("/:id")
   .put(listingsController.update)
   .delete(listingsController.remove);
 
+// Matches with "/api/listings/:id"
+router.route("/user/:id")
+  .get(listingsController.findByUser);
+
 module.exports = router;

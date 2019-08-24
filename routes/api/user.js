@@ -7,6 +7,7 @@ router.route("/")
 
 // Matches with "/api/user/auth"
 router.route("/auth")
-    .post(userController.authWithPassword);
+    .post(userController.authWithPassword)
+    .get(userController.authWithPassword);
 
 module.exports = router;

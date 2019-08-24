@@ -24,11 +24,14 @@ class Listings extends Component {
   }
 
   loadListings = () => {
-    API.getListings()
-      .then(res =>
-        this.setState({ listings: res.data, address: "", county: "", sqft: "", price: "", description: "" })
-      )
-      .catch(err => console.log(err));
+    if (this.props.user !== undefined) {
+      API.getListingByUser(this.props.user._id)
+        .then(res =>
+          this.setState({ listings: res.data, address: "", county: "", sqft: "", price: "", description: "" })
+        )
+        .catch(err => console.log(err));
+    }
+
   };
 
   deleteListing = id => {
@@ -52,7 +55,8 @@ class Listings extends Component {
         county: this.state.county,
         sqft: this.state.sqft,
         price: this.state.price,
-        description: this.state.description
+        description: this.state.description,
+        user: this.props.user._id
       })
         .then(res => this.loadListings())
         .catch(err => console.log(err));

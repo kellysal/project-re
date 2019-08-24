@@ -102,8 +102,8 @@ class Detail extends Component {
           <Col size="md-12">
             <article style={{ padding: 20 }}>
               <h1>Property Details</h1>
-              <p>
-                {this.state.listing.sqft} SQFT 💰 {this.state.listing.price}
+              <p> <span role="img" aria-label="Ruler">📏</span>
+                {this.state.listing.sqft} SQFT <span role="img" aria-label="Money">💰</span>{this.state.listing.price}
               </p>
               <p>
                 {this.state.listing.description}
@@ -162,13 +162,10 @@ class Detail extends Component {
                   <ListItem key={survey._id}>
                     <h1>
                       {survey.property}
-
                     </h1>
                     <h1>
                       {survey.answers[0]}
-
                     </h1>
-
                   </ListItem>
                 ))}
               </List>
