@@ -126,7 +126,7 @@ class Detail extends Component {
           </Col>
         </Row>
         <Row>
-          <Col size="lg-12">
+          <Col size="md-6">
             <form>
               {Object.keys(this.state.newSubmit).map((key, idx) => {
                 return (
@@ -152,10 +152,7 @@ class Detail extends Component {
               </FormBtn>
             </form>
           </Col>
-
-        </Row>
-        <Row>
-          <Col size="lg-12">
+          <Col size="md-6">
             {this.state.survey.length ? (
               <List>
                 {this.state.survey.map(survey => (
@@ -170,10 +167,9 @@ class Detail extends Component {
                 ))}
               </List>
             ) : (
-                <h3 style={{ margin: 25 }}>No Results to Display</h3>
+                <h3 style={{ margin: 25, textAlign: "center" }}>No Results to Display</h3>
               )}
           </Col>
-
         </Row>
       </Container>
     );

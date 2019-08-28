@@ -1,0 +1,19 @@
+body, h1, .btn{
+    font-family: "Helvetica", sans-serif;
+}
+
+.btn, .btn-primary {
+    background-color: black;
+    color: white;
+    border: none;
+    text-align: center
+}
+
+.jumbotron {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    background-color: white;
+    border-radius: 0.3rem;
+}
+
+

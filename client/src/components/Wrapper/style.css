@@ -1,0 +1,11 @@
+.wrapper {
+    background: lightgrey;
+    /* height: 100%; */
+    display: flex;
+    flex-flow: row wrap;
+    padding: 100px 20px 100px 20px;
+    justify-content: space-around;
+    align-content: flex-start;
+    overflow: auto;
+  }
+  

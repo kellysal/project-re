@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import DeleteBtn from "../components/DeleteBtn";
+// import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import Header from "../components/Header";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { List, ListItem } from "../components/List";
+// import { List, ListItem } from "../components/List";
 import { Input, TextArea, FormBtn } from "../components/Form";
+import ListingCard from "../components/Card";
+import Wrapper from "../components/Wrapper";
+import Image from "../components/Image";
 import "../style.css";
 
 class Listings extends Component {
@@ -16,18 +19,27 @@ class Listings extends Component {
     county: "",
     sqft: 0,
     price: 0,
-    description: ""
+    description: "",
+    image: "",
+
+    user: {}
   };
 
   componentDidMount() {
+    API.getListingByUser(this.props.match.params.id)
+      .then(res => this.setState({ user: res.data }))
+      .catch(err => console.log(err));
     this.loadListings();
   }
 
   loadListings = () => {
-    if (this.props.user !== undefined) {
-      API.getListingByUser(this.props.user._id)
+    const userid = this.props.match.params.id;
+    console.log(this.props.match.params.id);
+
+    if (userid !== undefined) {
+      API.getListingByUser(userid)
         .then(res =>
-          this.setState({ listings: res.data, address: "", county: "", sqft: "", price: "", description: "" })
+          this.setState({ listings: res.data, address: "", county: "", sqft: "", price: "", description: "", image: "" })
         )
         .catch(err => console.log(err));
     }
@@ -56,7 +68,8 @@ class Listings extends Component {
         sqft: this.state.sqft,
         price: this.state.price,
         description: this.state.description,
-        user: this.props.user._id
+        image: this.state.image,
+        user: this.props.match.params.id
       })
         .then(res => this.loadListings())
         .catch(err => console.log(err));
@@ -69,9 +82,10 @@ class Listings extends Component {
         <Row>
           <Col size="lg-12">
             <Header>
-              <h1>
-
+              <h1 style={{ fontFamily: "Helvetica", letterSpacing: 3, color: "white" }}>
+                Welcome Text
               </h1>
+              <h4 style={{ fontFamily: "Helvetica", letterSpacing: 3, color: "white" }}>Additional Placeholder Text</h4>
             </Header>
           </Col>
         </Row>
@@ -79,30 +93,45 @@ class Listings extends Component {
           <Col size="lg-12">
             <Jumbotron>
               <h1>MY PROPERTY LIST</h1>
+              <p>Placeholder Text</p>
             </Jumbotron>
             {this.state.listings.length ? (
-              <List>
+              <Wrapper>
                 {this.state.listings.map(listing => (
-                  <ListItem key={listing._id}>
-                    <Link to={"/listings/" + listing._id}>
-                      <strong>
-                        {listing.address} • {listing.county}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteListing(listing._id)} />
-                  </ListItem>
+                  <ListingCard
+                    // removeFriend={this.removeFriend}
+                    id={listing._id}
+                    key={listing._id}
+                    name={listing.address}
+                    image={listing.image}
+                    address={listing.address}
+                    county={listing.county}
+                    link={"/listings/" + listing._id}
+                  />
+
+                  // <ListItem key={listing._id}>
+                  //   <Link to={"/listings/" + listing._id}>
+                  //     <strong>
+                  //       {listing.address} • {listing.county}
+                  //     </strong>
+                  //   </Link>
+                  //   <DeleteBtn onClick={() => this.deleteListing(listing._id)} />
+                  // </ListItem>
                 ))}
-              </List>
+              </Wrapper>
             ) : (
                 <h3>No Results to Display</h3>
               )}
           </Col>
         </Row>
         <Row>
-          <Col size="lg-12">
-            <Jumbotron>
-              <h1>ADD NEW LISTING</h1>
-            </Jumbotron>
+          <Col size="md-6">
+            <Image />
+          </Col>
+          <Col size="md-6">
+
+            <h1 style={{ fontFamily: "Helvetica", margin: 30, letterSpacing: 3 }} >ADD NEW LISTING</h1>
+
             <form>
               <Input
                 value={this.state.address}
@@ -134,6 +163,12 @@ class Listings extends Component {
                 name="description"
                 placeholder="Enter Description"
                 rows="3"
+              />
+              < Input
+                value={this.state.image}
+                onChange={this.handleInputChange}
+                name="image"
+                placeholder="Enter Image"
               />
               <FormBtn
                 disabled={!(this.state.county && this.state.address)}

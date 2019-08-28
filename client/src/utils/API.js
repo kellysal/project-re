@@ -17,6 +17,9 @@ export default {
   saveListing: function (listingData) {
     return axios.post("/api/listings", listingData);
   },
+  registerUser: function (userData) {
+    return axios.post("/api/user/", userData);
+  },
   authUser: function (email, password) {
     return axios.post("/api/user/auth", { email, password });
   },

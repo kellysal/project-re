@@ -3,6 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
+const passport = require("passport");
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
@@ -20,6 +21,12 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/relisting", { u
 
 // mongoose.Promise = Promise;
 // mongoose.connect(MONGODB_URI, { useNewUrlParser: true });
+
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport config
+require("./config/passport")(passport);
 
 // Start the API server
 app.listen(PORT, function () {
