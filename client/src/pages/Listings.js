@@ -106,6 +106,8 @@ class Listings extends Component {
                     image={listing.image}
                     address={listing.address}
                     county={listing.county}
+                    sqft={listing.sqft}
+                    price={listing.price}
                     link={"/listings/" + listing._id}
                   />
 

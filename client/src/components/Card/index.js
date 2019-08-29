@@ -10,17 +10,20 @@ function ListingCard(props) {
             </div>
             <div className="content">
                 <ul>
-                    <li>
+                    {/* <li>
                         <strong>Address:</strong> {props.address}
+                    </li> */}
+                    <li>
+                        <span role="img" aria-label="Location">📍</span> {props.address}, {props.county}
                     </li>
                     <li>
-                        <strong>County:</strong> {props.county}
+                        <span role="img" aria-label="Spec">💰</span> {props.sqft} sqft | $ {props.price}
+                    </li>
+                    <li>
+                        <Link to={"/listings/" + props.id}> <span role="img" aria-label="Mag">🔎</span> Property Details</Link>
                     </li>
                 </ul>
             </div>
-            <button type="button" className="btn btn-secondary">
-                <Link to={"/listings/" + props.id}>Click to view</Link>
-            </button>
 
         </div>
     );

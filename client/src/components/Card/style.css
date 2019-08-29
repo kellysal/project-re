@@ -21,8 +21,8 @@
   }
   
   .card > .content {
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /* padding-left: 1rem;
+    padding-right: 1rem; */
     font-size: 15px;
   }
   
@@ -48,9 +48,15 @@
   }
 
 a {
-    color: lightgray;
+    color: gray;
     text-decoration: none;
     background-color: transparent;
+}
+
+a:hover {
+  color: black;
+  text-decoration: none;
+  background-color: transparent;
 }
 
 .card:hover {

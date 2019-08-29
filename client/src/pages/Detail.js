@@ -37,6 +37,7 @@ class Detail extends Component {
     API.getListing(this.props.match.params.id)
       .then(res => this.setState({ listing: res.data }))
       .catch(err => console.log(err));
+    this.loadSurvey();
   }
 
   loadSurvey = () => {
@@ -153,16 +154,29 @@ class Detail extends Component {
             </form>
           </Col>
           <Col size="md-6">
+            <h1 style={{ margin: 25, textAlign: "center" }}>{this.state.listing.address}</h1>
             {this.state.survey.length ? (
               <List>
                 {this.state.survey.map(survey => (
                   <ListItem key={survey._id}>
-                    <h1>
+                    <h4>
                       {survey.property}
-                    </h1>
-                    <h1>
-                      {survey.answers[0]}
-                    </h1>
+                    </h4>
+                    <h4>
+                      <span role="img" style={{ marginRight: 10 }} aria-label="Faucet">🚰</span>{survey.answers[0]}
+                    </h4>
+                    <h4>
+                      <span role="img" style={{ marginRight: 10 }} aria-label="Shower">🚿</span>{survey.answers[1]}
+                    </h4>
+                    <h4>
+                      <span role="img" style={{ marginRight: 10 }} aria-label="Electricity">🔌</span>{survey.answers[2]}
+                    </h4>
+                    <h4>
+                      <span role="img" style={{ marginRight: 10 }} aria-label="Locks">🔑</span>{survey.answers[3]}
+                    </h4>
+                    <h4>
+                      <span role="img" style={{ marginRight: 10 }} aria-label="Pro">👍</span>{survey.answers[4]}
+                    </h4>
                   </ListItem>
                 ))}
               </List>
