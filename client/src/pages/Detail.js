@@ -34,10 +34,12 @@ class Detail extends Component {
   // When this component mounts, grab the listing with the _id of this.props.match.params.id
   // e.g. localhost:3000/books/599dcb67f0f16317844583fc
   componentDidMount() {
+    window.scrollTo(0, 0);
     API.getListing(this.props.match.params.id)
       .then(res => this.setState({ listing: res.data }))
       .catch(err => console.log(err));
     this.loadSurvey();
+
   }
 
   loadSurvey = () => {

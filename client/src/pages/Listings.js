@@ -26,6 +26,7 @@ class Listings extends Component {
   };
 
   componentDidMount() {
+    window.scrollTo(0, 0);
     API.getListingByUser(this.props.match.params.id)
       .then(res => this.setState({ user: res.data }))
       .catch(err => console.log(err));
