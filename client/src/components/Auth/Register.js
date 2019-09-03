@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Jumbotron from "../Jumbotron";
+import { LandingJumbotron } from "../Jumbotron";
 import { Col, Row, Container } from "../Grid";
 import "./style.css";
 import API from "../../utils/API";
@@ -38,19 +38,15 @@ class Register extends Component {
             <Container fluid>
                 <Row>
                     <Col size="lg-12">
-                        <Link to="/" className="btnhome">Back to home</Link>
+                        <LandingJumbotron />
                     </Col>
                 </Row>
                 <Row>
-                    <Col size="lg-12">
-                        <Jumbotron>
-                            <h4>Register Below</h4>
-                            <p>Already have an account?</p><Link to="/login" className="btn">Log in</Link>
-                        </Jumbotron>
+                    <Col size="md-6">
+                        <h4 style={{ padding: 20, textAlign: "left", fontFamily: "Helvetica" }}>Register Below</h4>
+                        <p style={{ padding: 20, textAlign: "left", fontFamily: "Helvetica" }}>Already have an account?</p><Link to="/login" className="btn">Log in</Link>
                     </Col>
-                </Row>
-                <Row>
-                    <Col size="lg-12">
+                    <Col size="md-6">
                         <form onSubmit={this.onSubmit} style={{ padding: 30 }}>
                             <div className="input-field">
                                 <input
@@ -79,7 +75,7 @@ class Register extends Component {
                                     placeholder="Password"
                                 />
                             </div>
-                            <div className="btn btn-primary" style={{ paddingLeft: "11.250px" }}>
+                            <div>
                                 <button type="submit" className="btn">Sign up</button>
                             </div>
                         </form>

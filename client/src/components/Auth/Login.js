@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 // import { withRouter } from "react-router-dom";
 import { Col, Row, Container } from "../Grid";
-import Jumbotron from "../Jumbotron";
+import { LandingJumbotron } from "../Jumbotron";
 import "./style.css";
 import API from "../../utils/API";
 
@@ -45,21 +45,23 @@ class Login extends Component {
         return (
             <Container fluid>
                 <Row>
-                    <Col size="md-12">
-                        <Link to="/" style={{ padding: 20 }}>Back to home</Link>
+                    <Col size="lg-12">
+                        <LandingJumbotron />
                     </Col>
                 </Row>
                 <Row>
                     <Col size="lg-12">
-                        <Jumbotron>
-                            <h4>Login Below</h4>
-                            <p>Don't have an account?</p>
-                            <Link to="/register" className="btn">Register</Link>
-                        </Jumbotron>
+
                     </Col>
                 </Row>
                 <Row>
-                    <Col size="lg-12">
+                    <Col size="md-6">
+                        <p style={{ padding: 20, textAlign: "left", fontFamily: "Helvetica" }}>Don't have an account?</p>
+                        <h4 style={{ padding: 20, textAlign: "left", fontFamily: "Helvetica" }}>Register Below</h4>
+                        <Link to="/register" className="btn">Register</Link>
+                    </Col>
+                    <Col size="md-6">
+                        <h4 style={{ padding: 20, textAlign: "left", fontFamily: "Helvetica" }}>Login Below</h4>
                         <form onSubmit={this.onSubmit} style={{ padding: 30 }}>
                             <div className="input-field">
                                 <input
@@ -79,8 +81,8 @@ class Login extends Component {
                                     placeholder="Password"
                                 />
                             </div>
-                            <div className="btn btn-primary" style={{ paddingLeft: "11.250px" }}>
-                                <button type="submit" className="btn">Login</button>
+                            <div>
+                                <button type="submit" className="btn" style={{ marginTop: 20 }}>Login</button>
                             </div>
                         </form>
                     </Col>

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import Jumbotron from "../components/Jumbotron";
+import { Jumbotron } from "../components/Jumbotron";
 import API from "../utils/API";
 import surveyAPI from "../utils/surveyAPI";
 import { Input, FormBtn } from "../components/Form";
@@ -135,6 +135,7 @@ class Detail extends Component {
                 return (
                   <div>
                     <h5 style={{ margin: 25, fontFamily: "Helvetica" }}><FontAwesomeIcon key={idx} icon="check" color={"green"} />{`${idx + 1} Checklist Item`} </h5>
+
                     <Input
                       key={idx}
                       id={`a${idx}`}

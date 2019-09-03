@@ -7,7 +7,7 @@ function Nav(props) {
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <a className="navbar-brand" href="/">
-        Property Listing Project
+        RealTour
       </a>
       <Link to='/login' style={{ color: "white", fontFamily: "Helvetica" }} className="ml-auto">Login</Link>
     </nav>

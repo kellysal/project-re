@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 
-function Jumbotron({ children }) {
+export function Jumbotron({ children }) {
   return (
     <div
       style={{ height: 300, clear: "both", paddingTop: 120, textAlign: "center" }}
@@ -12,4 +12,13 @@ function Jumbotron({ children }) {
   );
 }
 
-export default Jumbotron;
+export function LandingJumbotron({ children }) {
+  return (
+    <div
+      style={{ height: 350, clear: "both", textAlign: "center" }}
+      className="landingjumbotron"
+    >
+      {children}
+    </div>
+  );
+}
