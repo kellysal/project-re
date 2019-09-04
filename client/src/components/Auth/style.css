@@ -2,12 +2,12 @@ body, h1, .btn{
     font-family: "Helvetica", sans-serif;
 }
 
-.btn, .btn-primary {
+.btn, .btn-primary{
     background-color: black;
     color: white;
     border: none;
     text-align: center;
-    margin: 20px;    
+    margin: 20px;
 }
 
 .jumbotron {

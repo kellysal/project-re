@@ -51,18 +51,15 @@ class Login extends Component {
                 </Row>
                 <Row>
                     <Col size="lg-12">
-
+                        <h1 style={{ padding: 20, textAlign: "center", fontFamily: "Helvetica" }}>
+                            WELCOME TO REALTOUR
+                        </h1>
                     </Col>
                 </Row>
                 <Row>
-                    <Col size="md-6">
-                        <p style={{ padding: 20, textAlign: "left", fontFamily: "Helvetica" }}>Don't have an account?</p>
-                        <h4 style={{ padding: 20, textAlign: "left", fontFamily: "Helvetica" }}>Register Below</h4>
-                        <Link to="/register" className="btn">Register</Link>
-                    </Col>
-                    <Col size="md-6">
-                        <h4 style={{ padding: 20, textAlign: "left", fontFamily: "Helvetica" }}>Login Below</h4>
-                        <form onSubmit={this.onSubmit} style={{ padding: 30 }}>
+                    <Col size="lg-12">
+                        <h4 style={{ padding: 20, textAlign: "center", fontFamily: "Helvetica" }}>Login Below</h4>
+                        <form onSubmit={this.onSubmit} style={{ padding: 10, display: "flex", justifyContent: "center", alignItems: "center" }}>
                             <div className="input-field">
                                 <input
                                     onChange={this.onChange}
@@ -82,9 +79,11 @@ class Login extends Component {
                                 />
                             </div>
                             <div>
-                                <button type="submit" className="btn" style={{ marginTop: 20 }}>Login</button>
+                                <button type="submit" className="btn">Login</button>
                             </div>
                         </form>
+                        <p style={{ marginRight: 20, textAlign: "right", fontFamily: "Helvetica" }}>Don't have an account?</p>
+                        <Link to="/register" className="btn" style={{ marginTop: 0, float: "right" }}>Register</Link>
                     </Col>
                 </Row>
             </Container >

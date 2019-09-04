@@ -84,9 +84,9 @@ class Listings extends Component {
           <Col size="lg-12">
             <Header>
               <h1 style={{ fontFamily: "Helvetica", letterSpacing: 3, color: "white" }}>
-                Welcome Text
+                LISTINGS
               </h1>
-              <h4 style={{ fontFamily: "Helvetica", letterSpacing: 3, color: "white" }}>Additional Placeholder Text</h4>
+              <h4 style={{ fontFamily: "Helvetica", letterSpacing: 3, color: "white" }}>SEARCH AND ADD PROPERTIES TO YOUR LIST</h4>
             </Header>
           </Col>
         </Row>
@@ -94,13 +94,12 @@ class Listings extends Component {
           <Col size="lg-12">
             <Jumbotron>
               <h1>MY PROPERTY LIST</h1>
-              <p>Placeholder Text</p>
+              <p>CHECK OUT YOUR SAVED LISTINGS BELOW</p>
             </Jumbotron>
             {this.state.listings.length ? (
               <Wrapper>
                 {this.state.listings.map(listing => (
                   <ListingCard
-                    // removeFriend={this.removeFriend}
                     id={listing._id}
                     key={listing._id}
                     name={listing.address}

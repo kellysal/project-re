@@ -42,12 +42,16 @@ class Register extends Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col size="md-6">
-                        <h4 style={{ padding: 20, textAlign: "left", fontFamily: "Helvetica" }}>Register Below</h4>
-                        <p style={{ padding: 20, textAlign: "left", fontFamily: "Helvetica" }}>Already have an account?</p><Link to="/login" className="btn">Log in</Link>
+                    <Col size="lg-12">
+                        <h1 style={{ padding: 20, textAlign: "center", fontFamily: "Helvetica" }}>
+                            WELCOME TO REALTOUR
+                        </h1>
                     </Col>
-                    <Col size="md-6">
-                        <form onSubmit={this.onSubmit} style={{ padding: 30 }}>
+                </Row>
+                <Row>
+                    <Col size="lg-12">
+                        <h4 style={{ padding: 20, textAlign: "center", fontFamily: "Helvetica" }}>Register Below</h4>
+                        <form onSubmit={this.onSubmit} style={{ padding: 10, display: "flex", justifyContent: "center", alignItems: "center" }}>
                             <div className="input-field">
                                 <input
                                     onChange={this.onChange}
@@ -79,6 +83,8 @@ class Register extends Component {
                                 <button type="submit" className="btn">Sign up</button>
                             </div>
                         </form>
+                        <p style={{ marginRight: 20, textAlign: "right", fontFamily: "Helvetica" }}>Already have an account?</p>
+                        <Link to="/login" className="btn" style={{ marginTop: 0, float: "right" }}>Log in</Link>
                     </Col>
                 </Row>
             </Container>
