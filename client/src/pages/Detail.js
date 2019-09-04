@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Jumbotron } from "../components/Jumbotron";
 import API from "../utils/API";
 import surveyAPI from "../utils/surveyAPI";
 import { Input, FormBtn } from "../components/Form";
 import { List, ListItem } from "../components/List";
+import DetailHeader from "../components/DetailHeader";
 import SurveyWrap from "../components/SurveyWrap";
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faCheck } from '@fortawesome/free-solid-svg-icons'
@@ -134,11 +135,11 @@ class Detail extends Component {
       <Container fluid>
         <Row>
           <Col size="md-12">
-            <Jumbotron>
-              <h1>
+            <DetailHeader>
+              <h1><span style={{ backgroundColor: "black", color: "white" }}>
                 {this.state.listing.address} • {this.state.listing.county}
-              </h1>
-            </Jumbotron>
+              </span></h1>
+            </DetailHeader>
           </Col>
         </Row>
         <Row>
@@ -146,7 +147,7 @@ class Detail extends Component {
             <article style={{ padding: 20 }}>
               <h1>Property Details</h1>
               <p> <span role="img" aria-label="Ruler">📏</span>
-                {this.state.listing.sqft} SQFT <span role="img" aria-label="Money">💰</span>{this.state.listing.price}
+                {this.state.listing.sqft} SQFT <span role="img" aria-label="Money">💰</span>{this.state.listing.price} | 1 BR | 1 BA
               </p>
               <p>
                 {this.state.listing.description}
@@ -156,7 +157,7 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="lg-12">
-            <Link to="/" style={{ padding: 20 }}>← Back to Listings</Link>
+            {/* <Link to="/" style={{ padding: 20 }}>← Back to Listings</Link> */}
           </Col>
         </Row>
         <Row>

@@ -1,0 +1,14 @@
+.detailheader{
+    font-family: "Helvetica", sans-serif;
+    letter-spacing: 3px;
+    width: 100%;
+    text-transform: uppercase;
+    background-image: url("../../assets/map.jpg");
+    
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 20%;
+    /* text-shadow: 10px 10px 10px rgb(255, 255, 255); */
+}

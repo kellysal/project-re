@@ -17,7 +17,7 @@ function ListingCard(props) {
                         <span role="img" aria-label="Location">📍</span> {props.address}, {props.county}
                     </li>
                     <li>
-                        <span role="img" aria-label="Spec">💰</span> {props.sqft} sqft | $ {props.price}
+                        <span role="img" aria-label="Spec">💰</span> {props.sqft} sqft | $ {props.price} | 1 BR | 1 BA
                     </li>
                     <li>
                         <Link to={"/listings/" + props.id}> <span role="img" aria-label="Mag">🔎</span> Property Details</Link>

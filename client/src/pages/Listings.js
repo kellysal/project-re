@@ -93,7 +93,7 @@ class Listings extends Component {
         <Row>
           <Col size="lg-12">
             <Jumbotron>
-              <h1>MY PROPERTY LIST</h1>
+              <h1>PROPERTY LIST</h1>
               <p>CHECK OUT YOUR SAVED LISTINGS BELOW</p>
             </Jumbotron>
             {this.state.listings.length ? (
