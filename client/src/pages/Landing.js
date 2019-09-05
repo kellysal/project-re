@@ -14,7 +14,7 @@ class Landing extends Component {
                         <h1 style={{ fontFamily: "Helvetica", letterSpacing: 7, color: "white", fontSize: "4rem" }}>
                             TRACK YOUR TOURS
               </h1>
-                        <h1 style={{ fontFamily: "Helvetica", letterSpacing: 7, color: "white", fontSize: "2rem" }}>
+                        <h1 style={{ fontFamily: "Helvetica", letterSpacing: 7, color: "white", fontSize: "4rem" }}>
                             WITH REALTOUR
               </h1>
                     </LandingHeader>
