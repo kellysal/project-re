@@ -25,7 +25,9 @@ class Landing extends Component {
                         <h1 style={{ padding: 20, textAlign: "center", fontFamily: "Helvetica" }}>
                             WELCOME TO REALTOUR
                         </h1>
-                        <p style={{ padding: 20, marginLeft: 50, marginRight: 50, textAlign: "center", fontFamily: "Helvetica" }}>Property viewing isn’t only for getting a sneak peek into what life could be like living in that space… it’s about making sure that space is secure, livable and in all-around good condition. Don’t sign simply because of the curb appeal or square footage – you need to diligently inspect your prospective home so you don’t end up with a bad deal.
+                        <p style={{ padding: 20, marginLeft: 50, marginRight: 50, textAlign: "center", fontFamily: "Helvetica" }}>
+                            Hunting for a home? RealTour is your ultimate inspection guide! Streamline the process and stay organized to make a decision you won't regret!
+                            Featuring property details, personal surveys and comparison features to assist you in finding the home of your dreams! RealTour finds you a real deal!
 </p>
                     </Col>
                 </Row>
