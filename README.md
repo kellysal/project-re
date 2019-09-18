@@ -1,11 +1,22 @@
+# REALTOUR
+
+## Deployed on Heroku
+
+[VISIT REALTOUR](realtour.herokuapp.com)
+
+![Screenshot](./client/src/assets/screenshot.png)
+
 ## Login Information 🔐
 
-Email: kelly@realtour.com
-Password: test
+1. Example Account:
+* Email: kelly@realtour.com
+* Password: test
 
-## TEAM REALTOUR
+2. *OR register a new user*
 
-Kelly
+## Team REALTOUR
+
+Kelly Salamack, Full Stack Developer
 
 ## Motivation 🏘
 
@@ -25,7 +36,16 @@ Hunting for a home? RealTour is your ultimate inspection guide! Streamline the p
 
 ## Technology Utilized 💻
 
-* Stack : MERN
+* HTML
+* CSS
+* Javascript
+* Node
+* Express
+* Mongo
+* Mongoose
+* Bootstrap
+* React
+* Passport
 
 ## Future Features 🔮
 
@@ -39,6 +59,6 @@ Hunting for a home? RealTour is your ultimate inspection guide! Streamline the p
 
 5. Exapnd to commercial real estate
 
-## Special Thanks 🙌
+## Contact
 
-Mark, Daniel & Roxy
+Email: kelly@creativenergy.co
