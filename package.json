@@ -22,7 +22,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.21",
     "@fortawesome/react-fontawesome": "^0.1.4",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bcryptjs": "^2.4.3",
     "express": "^4.16.3",
     "express-session": "^1.16.2",
